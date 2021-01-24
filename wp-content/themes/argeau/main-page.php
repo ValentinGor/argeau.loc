@@ -7,17 +7,22 @@ Template Post Type: page
 <?php get_header(); ?>
 
 <section>
-    <div class="first" style="background: var(--color-dark); background-image: url('<?php echo get_template_directory_uri();?>/assets/img/bg-1.jpg')">
+    <div class="first"
+         style="background: var(--color-dark); background-image: url('<?php the_field('main_background'); ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main">
-                        <div class="main__head">
-                            <h1>Complex wealth, made simple.</h1>
-                        </div>
-                        <div class="main__slag">
-                            <p>We help wealthy families manage their assets.</p>
-                        </div>
+                        <?php if (get_field('main_head')): ?>
+                            <div class="main__head">
+                                <h1><?php the_field('main_head'); ?></h1>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (get_field('main_slag')): ?>
+                            <div class="main__slag">
+                                <p><?php the_field('main_slag'); ?></p>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div id="scroll__bot" class="arrow">
                         <a href="#what_we_do">
@@ -39,73 +44,37 @@ Template Post Type: page
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="second__head">
-                        <h2>What we do?</h2>
-                    </div>
+                    <?php if (get_field('second_head')): ?>
+                        <div class="second__head">
+                            <h2><?php the_field('second_head'); ?></h2>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="col-lg-12">
-                    <div class="make">
-                        <div class="make__info">
-                            <div class="make__info_numb">
-                                01
+                    <?php if (have_rows('make_info')): ?>
+                        <?php while (have_rows('make_info')): the_row(); ?>
+                            <div class="make">
+                                <div class="make__info">
+                                    <div class="make__info_numb"
+                                         style="color: <?php the_sub_field('make_info_numb_color'); ?>">
+                                        <?php the_sub_field('make_info_numb'); ?>
+                                    </div>
+                                    <div class="make__info_head">
+                                        <h3 style="color: <?php the_sub_field('make_info_head_color'); ?>">
+                                            <?php the_sub_field('make_info_head'); ?>
+                                        </h3>
+                                    </div>
+                                    <div class="make__info_text">
+                                        <p style="color: <?php the_sub_field('make_info_text_color'); ?>">
+                                            <?php the_sub_field('make_info_text'); ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="make__imag"
+                                     style="background-image: url('<?php the_sub_field('make_imag'); ?>')"></div>
                             </div>
-                            <div class="make__info_head">
-                                <h3>Track all of your assets in one place</h3>
-                            </div>
-                            <div class="make__info_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis urna
-                                    bibendum fringilla dapibus. Etiam nulla nisi, vulputate at dapibus ac, placerat
-                                    condimentum ante.</p>
-                            </div>
-                        </div>
-                        <div class="make__imag" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/img-1.jpg')"></div>
-                    </div>
-                    <div class="make">
-                        <div class="make__info">
-                            <div class="make__info_numb">
-                                02
-                            </div>
-                            <div class="make__info_head">
-                                <h3>Co-ordinate with your adviser team</h3>
-                            </div>
-                            <div class="make__info_text">
-                                <p>Etiam eget imperdiet quam. In hac habitasse platea dictumst. Donec sed sem augue. In
-                                    fringilla dapibus erat, ac lobortis lorem posu. </p>
-                            </div>
-                        </div>
-                        <div class="make__imag" style="background-image: url('<?php echo  get_template_directory_uri();?>/assets/img/img-2.jpg')"></div>
-                    </div>
-                    <div class="make">
-                        <div class="make__info">
-                            <div class="make__info_numb">
-                                03
-                            </div>
-                            <div class="make__info_head">
-                                <h3>Manage your investments</h3>
-                            </div>
-                            <div class="make__info_text">
-                                <p>Nulla eu leo semper quam malesuada aliquet. Donec vel nunc a metus auctor laoreet sit
-                                    amet sed dolor.</p>
-                            </div>
-                        </div>
-                        <div class="make__imag" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/img-3.jpg')"></div>
-                    </div>
-                    <div class="make">
-                        <div class="make__info">
-                            <div class="make__info_numb">
-                                04
-                            </div>
-                            <div class="make__info_head">
-                                <h3>Identify new opportunities</h3>
-                            </div>
-                            <div class="make__info_text">
-                                <p>Vivamus vitae pulvinar nulla. Duis pretium mi eu finibus pretium. Nulla vitae
-                                    ultricies sapien. Suspendisse justo dolor, eleifend eget pretium sed, fermentum sed
-                                    dui. </p>
-                            </div>
-                        </div>
-                        <div class="make__imag" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/img-4.jpg')"></div>
-                    </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -113,58 +82,45 @@ Template Post Type: page
 </section>
 
 <section>
-    <div class="third" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/bg-2.jpg')">
+    <div class="third"
+         style="background: var(--color-dark); background-image: url('<?php the_field('third_background'); ?>')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="third__head">
-                        <h2>Why Argeau?</h2>
-                    </div>
+                    <?php if (get_field('third_head')): ?>
+                        <div class="third__head">
+                            <h2><?php the_field('third_head'); ?></h2>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="col-lg-12">
                     <div class="wherefore">
-                        <div class="wherefore__info">
-                            <div class="wherefore__info_icon">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/img/ico-1.svg" alt="img">
-                            </div>
-                            <div class="wherefore__info_head">
-                                <h4>Independence</h4>
-                            </div>
-                            <div class="wherefore__info_text">
-                                <p>Fixed fee, wholly aligned </p>
-                            </div>
-                        </div>
-
-                        <div class="wherefore__info">
-                            <div class="wherefore__info_icon">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/img/ico-2.svg" alt="img">
-                            </div>
-                            <div class="wherefore__info_head">
-                                <h4>Expertise</h4>
-                            </div>
-                            <div class="wherefore__info_text">
-                                <p>Deep industry knowledge</p>
-                            </div>
-                        </div>
-
-                        <div class="wherefore__info">
-                            <div class="wherefore__info_icon">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/img/ico-3.svg" alt="img">
-                            </div>
-                            <div class="wherefore__info_head">
-                                <h4>Technology</h4>
-                            </div>
-                            <div class="wherefore__info_text">
-                                <p>Tailored platform</p>
-                            </div>
-                        </div>
+                        <?php if (have_rows('wherefore_info')): ?>
+                            <?php while (have_rows('wherefore_info')): the_row(); ?>
+                                <div class="wherefore__info">
+                                    <div class="wherefore__info_icon">
+                                        <img src="<?php the_sub_field('wherefore_icon'); ?>" alt="img">
+                                    </div>
+                                    <div class="wherefore__info_head">
+                                        <h4><?php the_sub_field('wherefore_head'); ?></h4>
+                                    </div>
+                                    <div class="wherefore__info_text">
+                                        <p><?php the_sub_field('wherefore_text'); ?></p>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="start__link">
-                        <a href="#">Start today</a>
+                <?php if (get_field('link_link')): ?>
+                    <div class="col-lg-12">
+                        <div class="start__link">
+                            <a href="<?php the_field('link_link'); ?>">
+                                <?php the_field('link_text'); ?>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

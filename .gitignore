@@ -6,6 +6,7 @@ wp-content/upgrade/*
 wp-content/uploads/*
 wp-content/plugins/*
 wp-content/backups-dup-pro/*
+wp-content/themes/twentytwentyone/
 wp-content/themes/twentytwenty/*
 wp-content/themes/twentynineteen/*
 wp-content/themes/twentyseventeen/*
@@ -37,3 +38,5 @@ temp.php
 /node_modules/
 /package-lock.json
 /log/
+/.htaccess
+/index.php

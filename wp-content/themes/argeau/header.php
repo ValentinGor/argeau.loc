@@ -33,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="top__line">
                     <div class="top__line_logo">
-                        <a href="index.html">
+                        <a href="<?php echo get_home_url();?>">
                             <img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt="img">
                         </a>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="col-lg-12">
                     <div class="sticky__header">
                         <div class="sticky__header_logo">
-                            <a href="#">
+                            <a href="<?php echo get_home_url();?>">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/img/logo-icon.svg" alt="img">
                             </a>
                         </div>
