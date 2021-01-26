@@ -148,6 +148,7 @@ function argeau_scripts()
 {
     wp_enqueue_style('argeau-style-normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', array(), _S_VERSION);
     wp_enqueue_style('argeau-style-bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css', array(), _S_VERSION);
+    wp_enqueue_style('argeau-style-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), _S_VERSION);
     wp_enqueue_style('argeau-style-main', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION);
 
     wp_enqueue_style('argeau-style', get_stylesheet_uri(), array(), _S_VERSION);
@@ -162,6 +163,7 @@ function argeau_scripts()
     wp_enqueue_script('argeau-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), _S_VERSION, true);
     wp_enqueue_script('argeau-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), _S_VERSION, true);
     wp_enqueue_script('argeau-bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js', array(), _S_VERSION, true);
+    wp_enqueue_script('argeau-wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), _S_VERSION, true);
     wp_enqueue_script('argeau-script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true);
 }
 

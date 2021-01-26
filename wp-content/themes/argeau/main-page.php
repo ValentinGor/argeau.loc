@@ -14,17 +14,17 @@ Template Post Type: page
                 <div class="col-lg-12">
                     <div class="main">
                         <?php if (get_field('main_head')): ?>
-                            <div class="main__head">
+                            <div class="main__head wow animate__animated  animate__fadeInUp">
                                 <h1><?php the_field('main_head'); ?></h1>
                             </div>
                         <?php endif; ?>
-                        <?php if (get_field('main_slag')): ?>
+                        <?php if (get_field('main_slag wow animate__animated  animate__fadeInUp')): ?>
                             <div class="main__slag">
                                 <p><?php the_field('main_slag'); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div id="scroll__bot" class="arrow">
+                    <div id="scroll__bot" class="arrow wow animate__animated  animate__fadeInUp">
                         <a href="#what_we_do">
                             <svg xmlns="http://www.w3.org/2000/svg" width="45px" height="45px">
                                 <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
@@ -45,7 +45,7 @@ Template Post Type: page
             <div class="row">
                 <div class="col-lg-12">
                     <?php if (get_field('second_head')): ?>
-                        <div class="second__head">
+                        <div class="second__head wow animate__animated  animate__fadeInUp">
                             <h2><?php the_field('second_head'); ?></h2>
                         </div>
                     <?php endif; ?>
@@ -53,7 +53,7 @@ Template Post Type: page
                 <div class="col-lg-12">
                     <?php if (have_rows('make_info')): ?>
                         <?php while (have_rows('make_info')): the_row(); ?>
-                            <div class="make">
+                            <div class="make wow animate__animated  animate__fadeInUp">
                                 <div class="make__info">
                                     <div class="make__info_numb"
                                          style="color: <?php the_sub_field('make_info_numb_color'); ?>">
@@ -88,7 +88,7 @@ Template Post Type: page
             <div class="row">
                 <div class="col-lg-12">
                     <?php if (get_field('third_head')): ?>
-                        <div class="third__head">
+                        <div class="third__head wow animate__animated  animate__fadeInUp">
                             <h2><?php the_field('third_head'); ?></h2>
                         </div>
                     <?php endif; ?>
@@ -97,7 +97,7 @@ Template Post Type: page
                     <div class="wherefore">
                         <?php if (have_rows('wherefore_info')): ?>
                             <?php while (have_rows('wherefore_info')): the_row(); ?>
-                                <div class="wherefore__info">
+                                <div class="wherefore__info wow animate__animated  animate__fadeInUp">
                                     <div class="wherefore__info_icon">
                                         <img src="<?php the_sub_field('wherefore_icon'); ?>" alt="img">
                                     </div>
@@ -114,7 +114,7 @@ Template Post Type: page
                 </div>
                 <?php if (get_field('link_link')): ?>
                     <div class="col-lg-12">
-                        <div class="start__link">
+                        <div class="start__link wow animate__animated  animate__fadeInUp">
                             <a href="<?php the_field('link_link'); ?>">
                                 <?php the_field('link_text'); ?>
                             </a>
